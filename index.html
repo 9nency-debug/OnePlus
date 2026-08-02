@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePlus</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        nav {
+            height: 50px;
+            width: 100%;
+        }
+
+        /* .nav-content{
+
+    position:absolute;
+    top:50px;
+    left:0;
+
+    width:100%;
+    height:300px;
+
+    background:white;
+
+    transform:translateY(-100%);
+    transition:0.5s ease;
+
+    z-index:5;
+
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+
+} */
+
+
+/* .nav-content.show{
+
+    transform:translateY(0);
+
+} */
+
+/* .content h1{
+
+    font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+    font-size:40px;
+    padding:40px;
+
+} */
+
+        .icons {
+            height: 50px;
+            width: 150px;
+            margin-left: 1245px;
+            display: flex;
+            gap: 29px;
+        }
+
+        .icons > img {
+            height: 20px;
+            width: 20px;
+            margin-top: 16px;
+        }
+
+        .logo {
+            height: 50px;
+            width: 150px;
+            margin-top: -50px;
+            margin-left: 63px;
+
+            background-image: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQIkE_7_wVMSwhFASngd8iCz53gjxUCy2DQ7a1R3wQdnZKVF3bC");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .opt {
+            height: 50px;
+            width: 820px;
+            margin-left: 321px;
+            margin-top: -50px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .opt ul {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
+        
+        .opt ul li a {
+            text-decoration: none;
+            padding: 8px 16px;
+            color: black;
+            font-family: Arial, sans-serif;
+            transition: color .3s ease;
+            font-size: 14px;
+        }
+        
+        /* =========================
+        Reusable Hero
+        ========================== */
+        
+        .hero {
+            height: 650px;
+            width: 100%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hero1 {
+            background-image: url("https://www.oneplus.in/content/dam/oneplus/mumbai-c5/0723/home/Homepage_pc.jpg");
+        }
+        
+        .hero2 {
+            margin-top: 10px;
+            background-image: url("https://www.oneplus.in/content/dam/oneplus/mumbai-o/0630/HeroBanner_Mumbai_0630_Desktop-R.jpg");
+        }
+        
+        .hero3 {
+            margin-top: 10px;
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/prado/HeroBanner_Prado_Desktop.jpg);
+        }
+        
+        .hero-content {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-family: "OnePlus Sans", "Inter", Arial, sans-serif;
+            font-weight: 300;
+            font-size: 43px;
+        }
+        
+        .hero-content p {
+            font-family: "OnePlus Sans", "Inter", Arial, sans-serif;
+            font-size: 15px;
+        }
+        
+        button {
+            margin-top: 13px;
+            background: black;
+            color: white;
+            padding: 9px 20px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .hero-content a{
+            margin-top:15px;
+            color:black;
+            text-decoration:none;
+            font-family:Arial, sans-serif;
+        }
+        
+        .hero-buttons{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 15px;
+        }
+        
+        .hero-buttons a{
+            margin-top: 2px;
+            /* text-decoration: dashed; */
+            color: rgb(103, 103, 103);
+            font-family: "OnePlus Sans", "Inter", Arial, sans-serif;
+            font-size: 13px;
+        }
+        
+        .hero-buttons button{
+            margin-top: 0; 
+        }
+        
+        .hero3 > .hero-content > h1 {
+            font-size: 40px;
+        }
+        
+        /* 4-in-One 0-> Grid */
+        .product-grid{
+            width:100%;
+            /* padding:20px; */
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:10px;
+        }
+        
+        .card{
+            height:500px;
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            display:flex;
+            justify-content:center;
+            align-items:flex-start;
+        }
+        
+        .content{
+            margin-top:3px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:10px;
+        }
+        
+        .content > p {
+            font-family: "OnePlus Sans", "Inter", Arial, sans-serif;
+            font-size: 43px;
+            font-weight: 300;
+            font-size: 15px; 
+        }
+        
+        .content > h2 {
+            font-family: "OnePlus Sans", "Inter", Arial, sans-serif;
+            font-weight: 500;
+            font-size: 40px;
+        }
+        .card1{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2026/in/home/0629/SecondaryBanner_Suzuki_CMF_PC.jpg");
+        }
+        
+        .card2{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2026/in/home/0629/Nord6-pc.jpg");
+        }
+        
+        .card3{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2026/in/home/0629/SecondaryBanner_Macan_3CMF_PC.jpg");
+        }
+        
+        .card4{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2026/in/home/0420/op15-pc.jpg");
+        }
+        
+        .hero4 {
+            font-family: "OnePlus Sans", "Inter", Arial, sans-serif;
+            font-weight: 300;
+            font-size: 43px;
+            /* background-color: red; */
+            background-image: url("https://www.oneplus.in/content/dam/oneplus/2026/in/accproducts/HeroBanner_OPAccessories_Desktop.jpg");
+        }
+
+        .opt2 {
+            height: 55px;
+            width: 400px;
+            margin-left: 70px;
+            margin-top: 10px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .opt2 ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .opt2 ul li a {
+            text-decoration: none;
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        /* NAYA ADHYAY – carousel */
+        .carousel{
+            width:100%;
+            height:450px;
+            overflow:hidden;   
+        }
+
+        .track{
+            display:flex;
+            transition: transform 0.5s ease;
+        }
+
+        .One{
+            height:450px;
+            min-width:100%;   
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* font-size:250px; */
+            display:flex;
+            justify-content:center;
+            /* align-items:center; */
+            align-items:flex-start;
+        }
+
+        /* .One:nth-child(1) {
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/pad-4/homepage/SecondaryBanner_Pad4_Desktop.jpg);
+        }
+
+        .One:nth-child(2) {
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2026/in/home/0420/SecondaryBanner_PadGo2_Desktop.jpg);
+        }
+
+        .One:nth-child(3) {
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2025/in/home/1124/pad3-pc.jpg);
+        }
+
+        .One:nth-child(4) {
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2025/in/home/1022/SecondaryBanner_Pad2_Desktop.jpg);
+        }
+
+        .One:nth-child(5) {
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2025/in/home/1022/SecondaryBanner_PadLite_Desktop.jpg);
+        }
+
+        .One:nth-child(6) {
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2025/in/home/1022/SecondaryBanner_PadGo_Desktop.jpg);
+        } */
+
+        /* bg images */
+
+        .tablet1{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/pad-4/homepage/SecondaryBanner_Pad4_Desktop.jpg");
+        }
+
+        .tablet2{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2026/in/home/0420/SecondaryBanner_PadGo2_Desktop.jpg");
+        }
+
+        .tablet3{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2025/in/home/1124/pad3-pc.jpg");
+        }
+
+        .tablet4{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2025/in/home/1022/SecondaryBanner_Pad2_Desktop.jpg");
+        }
+
+        .tablet5{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2025/in/home/1022/SecondaryBanner_PadLite_Desktop.jpg");
+        }
+
+        .tablet6{
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2025/in/home/1022/SecondaryBanner_PadGo_Desktop.jpg");
+        }
+        
+        /* Text inside carousel */
+
+        .slide-content{
+            margin-top:35px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+            color:black;
+        }
+
+        .slide-content p{
+            font-size:15px;
+        }
+
+        .slide-content h2{
+            font-size:43px;
+            font-weight:400;
+        }
+
+        .slide-buttons{
+            display:flex;
+            gap:15px;
+            margin-top:15px;
+            align-items:center;
+        }
+
+        .slide-buttons a{
+            text-decoration:none;
+            color:black;
+            font-size:14px;
+        }
+
+        /* Dots */
+
+        .dots{
+            display:flex;
+            justify-content:center;
+            gap:10px;
+            margin-top:15px;
+        }
+
+        .dot{
+            height:10px;
+            width:10px;
+            background-color:gray;
+            border-radius:50%;
+            cursor:pointer;
+        }
+        .dot.active{
+            background-color:black;
+        }
+
+ /* ========= Marketing ============ */
+
+        .ad {
+            height:327px;
+            width:100%;
+            display:flex;
+            gap:20px;
+            padding:0 40px;
+            /* margin-left: 30px; */
+        }
+
+        /* common card */
+
+        .mark1,
+        .mark2 {
+            height:327px;
+            width:50%;
+            position:relative;
+            overflow:hidden;
+            /* margin-right: 20px; */
+        }
+
+        /* LEFT CARD */
+
+        .mark1 {
+            background-color:#FAFAFA;
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2025/in/home/1230/Light_IN_Tablet.jpg");
+            background-size:cover;
+            background-position:170px;
+            background-repeat:no-repeat;
+            
+        }
+
+        /* RIGHT CARD */
+        .mark2 {
+            background-color:#FAFAFA;
+        }
+
+        /* image container */
+
+        .mark2 .image {
+            height:100%;
+            width:100%;
+        }
+
+        .mark2 img {
+            height:100%;
+            width:100%;
+            object-fit:contain;
+            margin-left: 160px;
+        }
+
+        /* text */
+
+        .mark1 h2,
+        .mark2 h2 {
+            font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+            font-weight:500;
+            font-size:40px;
+            margin-left:20px;
+            margin-top:20px;
+        }
+
+        .mark1 p,
+        .mark2 p {
+
+            font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+            font-size:15px;
+
+            margin-left:20px;
+            margin-top:200px;
+        }
+
+        .mark1 button,
+        .mark2 button {
+
+            margin-left:20px;
+        }
+
+        .mark2-content{
+            position:absolute;
+            top:0;
+            left:0;
+        }
+
+        /* 7 CARDS */
+
+        .CARD1, .CARD2, .CARD3, .CARD4, .CARD5, .CARD6, .CARD7 {
+            height: 460px;
+            width: 1385px;
+            background-color: #FAFAFA;
+            margin-top: 60px;
+            margin-left: 40px;
+            /* margin-right: 10px; */
+        }
+
+        .CARD1 > #image1 {
+            height: 100%;
+            width: 70%;
+            /* background-color:black ; */
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2024/global/home/1104/OxygenOS16_Desktop.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .CARD2 > #image2 {
+            height: 100%;
+            width: 70%;
+            margin-left: 30%;
+            /* background-color:black ; */
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2025/in/home/lifetime/E_Desktop.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .CARD3 > #image3 {
+            height: 100%;
+            width: 70%;
+            /* background-color:black ; */
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2025/in/home/0527/Light_LifetimeWarranty_Desktop.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .CARD4 > #image4 {
+            height: 100%;
+            width: 70%;
+            margin-left: 30%;
+            /* background-color:black ; */
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2025/in/home/0730/EC-1312.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .CARD5 > #image5 {
+            height: 100%;
+            width: 70%;
+            /* background-color:black ; */
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2025/photography/home/Article_Card_Pc.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: black;
+        }
+
+        .beforeSupport {
+            height: 1090px;
+            width: 100%;
+            background-color: #000;
+            display:flex;
+            flex-direction:column;
+            gap:60px;
+            margin-top: 60px;
+            padding-top:0.01rem;
+            display:flow-root;
+        }
+
+
+        /* .beforeSupport .CARD6 {
+            padding:30px;
+        } */
+
+        .CARD6 > #image6 {
+            height: 100%;
+            width: 70%;
+            margin-left: 30%;
+            /* background-color:black ; */
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2024/in/home/1114/new-ArticleCard_Light_PhotographyAwards_Desktop.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #262626;
+            /* margin-top: 0px; */
+        }
+
+        .CARD7 > #image7 {
+            height: 100%;
+            width: 70%;
+            /* background-color:black ; */
+            background-image: url(https://www.oneplus.in/content/dam/oneplus/2024/eu/home/0929/RCC_Desktop.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #262626;
+        }
+
+        /* ======== Support Page ======= */
+
+        /* .support {
+            height: 460px;
+            width: 1385px;
+            background-color: #ff0000;
+            margin-top: 60px;
+            margin-left: 40px;
+        } */
+
+        main {
+            height: 600px;
+            width: 100%;
+            /* background-color: crimson; */
+        }
+
+        main > .support {
+            padding-top: 90px;
+        }
+
+        .support {
+            height:327px;
+            width:100%;
+            display:flex;
+            gap:20px;
+            padding:0 40px;
+            /* background-color: rgb(201, 205, 255); */
+            /* margin-left: 30px; */
+        }
+
+        /* common card */
+
+        .left,
+        .right {
+            height:327px;
+            width:50%;
+            position:relative;
+            overflow:hidden;
+            /* margin-right: 20px; */
+        }
+
+        /* LEFT CARD */
+
+        .left {
+            background-color:#FAFAFA;
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2024/in/home/1114/helpdesk_Desktop.jpg");
+            background-size:contain;
+            background-position:right center;
+            background-repeat:no-repeat;
+            
+        }
+        
+        /* RIGHT CARD */
+        .right {
+            background-color:#FAFAFA;
+            background-image:url("https://www.oneplus.in/content/dam/oneplus/2024/in/home/1114/RepairService_Desktop.jpg");
+            background-size:contain;
+            background-position:right center;
+            background-repeat:no-repeat;
+        }
+
+        /* text */
+
+        .left h2,
+        .right h2 {
+            font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+            font-weight:500;
+            font-size:40px;
+            margin-left:20px;
+            margin-top:20px;
+        }
+
+        .left p,
+        .right p {
+            font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+            font-size:15px;
+            margin-left:20px;
+            margin-top:200px;
+        }
+
+        .left button,
+        .right button {
+            margin-left:20px;
+        }
+
+        .right-content{
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        
+        .helplinks {
+            height:40px;
+            width:100%;
+            margin-top:111px;
+            display:flex;
+            justify-content:flex-start;
+            gap:20px;
+            padding: 40px;
+        }
+        
+        .helplinks button {
+            height:40px;
+            width:220px;
+            background:white;
+            color:black;
+            border:1px solid #d5d5d5;
+            border-radius:25px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+            font-size:14px;
+            cursor:pointer;
+            
+        }
+        
+        .helplinks button img {
+            height:10px;
+            width:10px;
+        }
+        
+        .helplinks button:hover{
+            border-color:#000;
+        }
+
+        footer{
+            height:auto;
+            width:100%;
+            background:#000;
+            color:#8c8c8c;
+            padding:65px 110px 30px;
+            font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+        }
+
+/* TOP SECTION */
+.footer-top{
+    display:grid;
+    grid-template-columns:
+    repeat(5,1fr);
+}
+
+.footer-col{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.footer-col h3{
+    color:white;
+    font-size:18px;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.footer-col a{
+    color:#8c8c8c;
+    text-decoration:none;
+    font-size:16px;
+}
+
+.footer-col a:hover{
+    color:white;
+}
+
+/* MIDDLE */
+
+.footer-middle{
+    margin-top:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.payment{
+    display:flex;
+    gap:35px;
+}
+
+.payment div{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.payment img{
+    height:22px;
+    width:22px;
+}
+
+.social{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.social img{
+    height:24px;
+    width:24px;
+}
+
+.social span{
+    height:30px;
+    width:1px;
+    background:#555;
+}
+
+.social p{
+    color:white;
+    font-size:18px;
+}
+
+.social .arrow{
+    height:15px;
+    width:15px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+    border-top:1px solid #333;
+    margin-top:45px;
+    padding-top:35px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    white-space:nowrap;   /* prevents line break */
+    gap:20px;
+
+}
+
+.footer-bottom div:first-child{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.footer-bottom a{
+    font-size:14px;
+}
+
+.footer-bottom b{
+    color:#555;
+    font-weight:300;
+}
+
+.footer-bottom p{
+    font-size:14px;
+    white-space:nowrap;
+}
+.country{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+    white-space:nowrap;
+}
+
+.country img{
+    height:18px;
+    width:18px;
+}
+
+.footer-links{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.footer-links a,
+.country a{
+    text-decoration:none;
+    color:#8c8c8c;
+    font-size:14px;
+}
+
+.footer-links a:hover,
+.country a:hover{
+    color:white;
+
+}
+
+
+.global-icon{
+    height:20px;
+    width:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.global-icon img{
+    height:18px;
+    width:18px;
+    object-fit:contain;
+    filter: invert(1);
+    background:none;
+}
+
+.support-dropdown{
+    position:relative;
+    width:250px;
+}
+
+.support-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    color:white;
+    font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+}
+
+.arrow{
+    height:12px;
+    width:12px;
+    background:none;
+    transition:transform .3s ease;
+}
+
+/* dropdown box */
+.support-menu{
+    position:absolute;
+    bottom:35px; 
+    left:0px;
+    width:260px;
+    background:white;
+    padding:15px 0;
+    border-radius:8px;
+    display:none;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* options */
+
+.support-menu a{
+    height:45px;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:black;
+    font-family:"OnePlus Sans","Inter",Arial,sans-serif;
+    font-size:14px;
+}
+
+.support-menu a img{
+    height:18px;
+    width:18px;
+
+}
+
+.support-menu a span{
+    margin-left:auto;
+
+}
+
+/* hover effect */
+
+.support-dropdown:hover .arrow{
+    transform:rotate(180deg);
+
+}
+
+.support-dropdown:hover .support-menu{
+    display:block;
+}
+
+/* option hover */
+
+.support-menu a:hover{
+    background:#f5f5f5;
+}
+        </style>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="icons">
+            <img src="search-interface-symbol.png" alt="">
+            <img src="shopping-cart.png" alt="">
+            <img src="user.png" alt="">
+        </div>
+        <div class="logo"></div>
+        <div class="opt">
+            <ul>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Phone</a></li>
+                <li><a href="#">Tablet</a></li>
+                <li><a href="#">Audio</a></li>
+                <li><a href="#">More Products</a></li>
+                <li><a href="#">OneTopia</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dropdown content -->
+    <div class="content">
+        <h1></h1>
+    </div>
+
+</header>
+
+<!-- ================= Hero 1 ================= -->
+
+<section class="hero hero1">
+    <div class="hero-content">
+        <p>Power for Days</p>
+        <h1>OnePlus N6x</h1>
+        <p>Launching July 31, 12PM</p>
+        <p>
+            Hit Notify Me and get the latest update on OnePlus N6x.
+        </p>
+        <button>Notify Me</button>
+    </div>
+</section>
+
+<!-- ================= Hero 2 ================= -->
+
+<section class="hero hero2">
+    <div class="hero-content">
+        <p>Always On. Always Smooth.</p>
+        <h1>OnePlus N6</h1>
+        <p>Sale is Live!</p>
+        <p>
+            From ₹29,999 incl. bank offers.
+        </p>
+        <p>Enjoy up to 6 months No Cost EMI*</p>
+        
+        <div class="hero-buttons">
+            <button>Buy Now</button>
+            <u><a href="#">Learn More</a></u>
+        </div>
+    </div>
+</section>
+
+<!-- ================= Hero 3 ================= -->
+
+<section class="hero hero3">
+    <div class="hero-content">
+        <p>Crazy Power, Pure Play.</p>
+        <h1>OnePlus Nord CE6</h1>
+        <p>From ₹33,999 incl bank offers.</p>
+        <p>Enjoy up to 6 months No Cost EMI*</p>
+        
+        <div class="hero-buttons">
+            <button>Buy Now</button>
+            <u><a href="#">Learn More</a></u>
+        </div>
+    </div>
+    
+</section>
+
+<!-- ================= 4 In one ================= -->
+
+<section class="product-grid">
+    
+    <div class="card card1">
+        <div class="content">
+            <p>Lite-ning Speed, All-out Play.</p>
+            <h2>OnePlus Nord CE6 Lite</h2>
+            <div class="hero-buttons">
+                <button>Buy Now</button>
+                <u><a href="#">Learn More</a></u>
+            </div>
+            <!-- <button>Buy Now</button> -->
+        </div>
+    </div>
+    <div class="card card2">
+        <div class="content">
+            <p>Strikes fast, stays cool.</p>
+            <h2>OnePlus Nord 6</h2>
+            <div class="hero-buttons">
+                <button>Buy Now</button>
+                <u><a href="#">Learn More</a></u>
+            </div>
+            <!-- <button>Buy Now</button> -->
+        </div>
+    </div>
+    <div class="card card3">
+        <div class="content">
+            <p>Power On. Limits Off.</p>
+            <h2>OnePlus 15R</h2>
+            <div class="hero-buttons">
+                <button>Buy Now</button>
+                <u><a href="#">Learn More</a></u>
+            </div>
+            <!-- <button>Buy Now</button> -->
+        </div>
+    </div>
+    <div class="card card4">
+        <div class="content">
+            <p>Power On. Limits Off.</p>
+            <h2>OnePlus 15</h2>
+            <div class="hero-buttons">
+                <button>Buy Now</button>
+                <u><a href="#">Learn More</a></u>
+            </div>
+            <!-- <button>Buy Now</button> -->
+        </div>
+    </div>
+</section>
+
+<!-- ================= Hero 4 ================= -->
+
+<section class="hero hero4">
+    <div class="hero-content">
+        <p>Your phone's perfect match</p>
+        <h1>OnePlus Accesories</h1>
+        <button>Learn More</button>
+    </div>
+</section>
+
+<!-- ================= opts 2 ================= -->
+
+<section>
+    <div class="opt2">
+        <ul>
+            <li><a href="#">Tablet</a></li>
+            <li><a href="#">Audio</a></li>
+            <li><a href="#">You Might Also Like</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ================= Tablet Carousel ================= -->
+
+<section class="carousel">
+    <div class="track">
+        <div class="One tablet1">
+            <div class="slide-content">
+                <p>Exceptional Without Exception.</p>
+                <h2>OnePlus Pad 4</h2>
+                <div class="slide-buttons">
+                    <button>Buy Now</button>
+                    <u><a href="#">Learn More</a></u>
+                </div>
+            </div>
+        </div>
+        
+        <div class="One tablet2">
+            <div class="slide-content">
+                <p>Designed for your flow.</p>
+                <h2>OnePlus Pad Go 2</h2>
+                <div class="slide-buttons">
+                    <button>Buy Now</button>
+                    <u><a href="#">Learn More</a></u>
+                </div>
+            </div>
+        </div>
+        
+        <div class="One tablet3">
+            <div class="slide-content">
+                <p>Entertainment Without Limits.</p>
+                <h2>OnePlus Pad Go</h2>
+                <div class="slide-buttons">
+                    <button>Buy Now</button>
+                    <u><a href="#">Learn More</a></u>
+                </div>
+            </div>
+        </div>
+        
+        <div class="One tablet4">
+            <div class="slide-content">
+                <p>Designed For Creativity.</p>
+                <h2>OnePlus Pad Pro</h2>
+                <div class="slide-buttons">
+                    <button>Buy Now</button>
+                    <u><a href="#">Learn More</a></u>
+                </div>
+            </div>
+        </div>
+        
+        <div class="One tablet5">
+            <div class="slide-content">
+                <p>Big Screen. Better Work.</p>
+                <h2>OnePlus Tablet</h2>
+                <div class="slide-buttons">
+                    <button>Buy Now</button>
+                    <u><a href="#">Learn More</a></u>
+                </div>
+            </div>
+        </div>
+        
+        <div class="One tablet6">
+            <div class="slide-content">
+                <p>Your Perfect Digital Companion.</p>
+                <h2>OnePlus Accessories</h2>
+                <div class="slide-buttons">
+                    <button>Buy Now</button>
+                    <u><a href="#">Learn More</a></u>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+
+<button id="prev"><</button>
+<button id="next">></button>
+
+<!-- Audio -->
+
+<!-- You Might Also Like -->
+
+<!-- ========= Marketing ============ -->
+
+<section>
+    <div class="ad">
+        <div class="mark1">
+            <h2>OnePlus 15R</h2>
+            <p>This is what experts have to say</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="mark2">
+            <div class="image">
+                <img src="https://www.oneplus.in/content/dam/oneplus/2025/in/home/1203/ArticleCard_Media_pc.jpg" alt="">
+            </div>
+            <div class="mark2-content">
+                <h2>OnePlus 15</h2>
+                <p>This is what experts have to say</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- ========= 7 Cards ============ -->
+
+<!-- CARD1 -->
+
+    <section>
+        <div class="CARD1">
+            <div id="image1"></div>
+        </div>
+    </section>
+
+    <!-- CARD2 -->
+
+    <section>
+        <div class="CARD2">
+            <div id="image2"></div>
+        </div>
+    </section>
+
+    <!-- CARD3 -->
+
+    <section>
+        <div class="CARD3">
+            <div id="image3"></div>
+        </div>
+    </section>
+
+    <!-- CARD4 -->
+
+    <section>
+        <div class="CARD4">
+            <div id="image4"></div>
+        </div>
+    </section>
+
+    <!-- CARD5 -->
+
+    <section>
+        <div class="CARD5">
+            <div id="image5"></div>
+        </div>
+    </section>
+
+    <!-- ========== Before Support ========== -->
+
+    <!-- CARD6 -->
+
+
+    <section>
+        <div class="beforeSupport">
+            <div class="CARD6" style="background-color:#262626;">
+                <div id="image6"></div>
+            
+        </div>
+
+
+<!-- CARD7 -->
+
+    <div class="CARD7" style="background-color:#262626;">
+        <div id="image7"></div>
+    </div>
+</section>
+
+<!-- ================ Support ================ -->
+
+<section>
+    <main>
+        <div class="support">
+            <div class="left">
+                <h2>OnePlus 15R</h2>
+                <p>This is what experts have to say</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="right">
+                <div class="right-content">
+                    <h2>OnePlus 15</h2>
+                    <p>This is what experts have to say</p>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help btns(sites) -->
+         
+        <div class="helplinks">
+            <button>
+                Production help
+                <img src="/ONE+/up-right-arrow.png">
+            </button>
+            <button>
+                Shopping FAQ
+                <img src="/ONE+/up-right-arrow.png">
+            </button>
+            <button>
+                Troubleshooting
+                <img src="/ONE+/up-right-arrow.png">
+            </button>
+
+            <button>
+                Protection plan
+                <img src="/ONE+/up-right-arrow.png">
+            </button>
+        </div>
+    </main>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h3>Phones</h3>
+            <a href="#">OnePlus N6</a>
+            <a href="#">OnePlus Nord CE6</a>
+            <a href="#">OnePlus Nord CE6 Lite</a>
+            <a href="#">OnePlus Nord 6</a>
+            <a href="#">OnePlus 15R</a>
+            <a href="#">OnePlus 15</a>
+        </div>
+
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h3>Store</h3>
+            <a href="#">Tablet</a>
+            <a href="#">Audio</a>
+            <a href="#">Wearables</a>
+            <a href="#">Cases & Protection</a>
+            <a href="#">Power & Cables</a>
+            <a href="#">Bundles</a>
+            <a href="#">Gear</a>
+        </div>
+
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h3>Support</h3>
+            <a href="#">Shopping FAQs</a>
+            <a href="#">User Manuals</a>
+            <a href="#">Service Centers</a>
+            <a href="#">Repair Service</a>
+            <a href="#">Repair Pricing</a>
+            <a href="#">Software Upgrade</a>
+            <a href="#">Plus Lock</a>
+        </div>
+
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+            <h3>Explore</h3>
+            <a href="#">About OnePlus</a>
+            <a href="#">Community</a>
+            <a href="#">Find a store</a>
+            <a href="#">OnePlus Store App</a>
+            <a href="#">OxygenOS</a>
+            <a href="#">Press</a>
+            <a href="#">Compliance Disclosure</a>
+        </div>
+
+
+        <!-- Column 5 -->
+        <div class="footer-col">
+            <h3>Programs</h3>
+            <a href="#">Exchange Program</a>
+            <a href="#">Red Cable Club</a>
+            <a href="#">Corporate Employee Program</a>
+        </div>
+
+    </div>
+
+    <!-- Payment + Social -->
+
+    <div class="footer-middle">
+        <div class="payment">
+
+            <div>
+                <img src="https://www.oneplus.com/content/dam/oasis/page/footer/Credit_Card-outline.svg">
+                <span>Credit/Debit Card</span>
+            </div>
+
+            <div>
+                <img src="https://www.oneplus.com/content/dam/oasis/page/footer/Netbanking-outline.svg">
+                <span>NetBanking</span>
+            </div>
+
+
+            <div>
+                <img src="https://www.oneplus.com/content/dam/oasis/page/footer/EMI-outline.svg">
+                <span>EMI</span>
+            </div>
+
+
+            <div>
+                <img src="https://www.oneplus.com/content/dam/oasis/page/footer/Wallet-pay-outline.svg">
+                <span>Wallet</span>
+            </div>
+
+        </div>
+
+        <div class="social">
+
+            <img src="https://www.oneplus.com/content/dam/oneplus/2024/nav/footer/Facebook-solid.svg">
+            <img src="https://www.oneplus.com/content/dam/oneplus/2024/nav/footer/Twitter-solid.svg">
+            <img src="https://www.oneplus.com/content/dam/oneplus/2024/nav/footer/Instagram-solid.svg">
+
+            <span></span>
+
+            <p>
+                Get Support From OnePlus
+            </p>
+
+            <!-- <img class="arrow" src="/ONE+/down-arrow.png" style="background-color: #fff;"> -->
+             <div class="support-dropdown">
+
+    <div class="support-title">
+        <span></span>
+        <img class="arrow" src="down-arrow.png" alt="arrow" style="background-color: #fff;">
+    </div>
+
+
+    <div class="support-menu">
+
+        <a href="#">
+            <img src="phone.png">
+            Toll free 1800 102 8411
+            
+        </a>
+
+        <a href="#">
+            <img src="/ONE+/chat.png">
+            Live Chat
+        </a>
+
+        <a href="#">
+            <img src="whatsapp.png">
+            WhatsApp
+        </a>
+
+        <a href="#">
+            <img src="https://www.oneplus.in/content/dam/oneplus/2025/in/footer/contacts_solid.svg">
+            Service Center
+
+        </a>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+
+    <div class="footer-bottom">
+
+    <div class="footer-links">
+
+        <a href="privacy.html">Privacy Policy</a>
+
+        <b>|</b>
+
+        <a href="user-agreement.html">User Agreement</a>
+
+        <b>|</b>
+
+        <a href="terms-sale.html">Terms of Sale</a>
+
+        <b>|</b>
+
+        <a href="ewaste.html">E-waste management</a>
+
+        <b>|</b>
+
+        <a href="security.html">
+            Security Response Center (OneSRC)
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2013 - 2026 OnePlus. All Rights Reserved.
+    </p>
+
+
+    <div class="country">
+
+        <a href="india.html">
+            India (English)
+        </a>
+        <div class="global-icon">
+        <img src="global.png" style="background-color: #fff;">
+        </div>
+
+    </div>
+
+</div>
+</footer>
+
+<!-- ==================================== -->
+
+        <script>
+            const carousel = document.querySelector(".carousel");
+            const track = carousel.querySelector(".track");
+            const slides = carousel.querySelectorAll(".One");
+            const dots = document.querySelectorAll(".dot");
+            const nextBtn = document.querySelector("#next");
+            const prevBtn = document.querySelector("#prev");
+            let currentSlide = 0;
+            function updateSlide(){
+                track.style.transform =
+                `translateX(-${currentSlide * 100}%)`;
+                updateDots();
+            }
+            function updateDots(){
+                dots.forEach(dot=>{
+                    dot.classList.remove("active");
+                });
+                dots[currentSlide].classList.add("active");
+            }
+            nextBtn.addEventListener("click",()=>{
+                currentSlide++;
+                if(currentSlide >= slides.length){
+                    currentSlide = 0;
+                }
+                updateSlide();
+            });
+            prevBtn.addEventListener("click",()=>{
+                currentSlide--;
+                if(currentSlide < 0){
+                    currentSlide = slides.length-1;
+                }
+                updateSlide();
+            });
+
+            // dots click
+
+            dots.forEach((dot,index)=>{
+                dot.addEventListener("click",()=>{
+                    currentSlide=index;
+                    updateSlide();
+                });
+            });
+
+            // auto slider
+
+            let autoSlide=setInterval(()=>{
+                currentSlide++;
+                if(currentSlide >= slides.length){
+                    currentSlide=0;
+                }
+                updateSlide();
+            },3000);
+
+            // pause on hover
+            carousel.addEventListener("mouseenter",()=>{
+                clearInterval(autoSlide);
+            });
+
+            carousel.addEventListener("mouseleave",()=>{
+                autoSlide=setInterval(()=>{
+                    currentSlide++;
+                    if(currentSlide >= slides.length){
+                        currentSlide=0;
+                    }
+                    updateSlide();
+                },3000);
+            });
+
+            // For NAVBAR
+
+            const menuItems = document.querySelectorAll(".opt li");
+            const dropdown = document.querySlector(".content");
+            const heading = document.querySelector(".conctent h1");
+
+            // menu options
+            const menuData = {
+                "Store":[
+                    "Phones",
+                    "Tablets", 
+                    "Audio", 
+                    "Accessories"
+                ],
+
+                "Tablet": [
+                    "OnePlus Pad", 
+                    "OnePlus Pad 2",
+                    "OnePlus Pad Go"
+                ], 
+
+                "More Products": [
+                    "Watch", 
+                    "Keyword", 
+                    "Charger",
+                    "Cases"
+                ], 
+
+                "OneTopia": [
+
+                ]
+            }
+
+        </script>
+</body>
+</html>
