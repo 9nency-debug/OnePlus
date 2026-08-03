@@ -16,46 +16,17 @@
             width: 100%;
             height: 100%;
         }
+        
+        header {
+            position: relative;
+        }
 
         nav {
             height: 50px;
             width: 100%;
+            position: relative;
+            z-index: 20;
         }
-
-        /* .nav-content{
-
-    position:absolute;
-    top:50px;
-    left:0;
-
-    width:100%;
-    height:300px;
-
-    background:white;
-
-    transform:translateY(-100%);
-    transition:0.5s ease;
-
-    z-index:5;
-
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-
-} */
-
-
-/* .nav-content.show{
-
-    transform:translateY(0);
-
-} */
-
-/* .content h1{
-
-    font-family:"OnePlus Sans","Inter",Arial,sans-serif;
-    font-size:40px;
-    padding:40px;
-
-} */
 
         .icons {
             height: 50px;
@@ -107,9 +78,11 @@
             font-size: 14px;
         }
         
-        /* =========================
+        /* 
+        =========================
         Reusable Hero
-        ========================== */
+        ========================== 
+        */
         
         .hero {
             height: 650px;
@@ -125,7 +98,7 @@
         }
         
         .hero1 {
-            background-image: url("https://www.oneplus.in/content/dam/oneplus/mumbai-c5/0723/home/Homepage_pc.jpg");
+            background-image: url("https://www.oneplus.in/content/dam/oneplus/mumbai-c5/0731/home/Homepage_pc-R2.jpg");
         }
         
         .hero2 {
@@ -1551,6 +1524,9 @@
             const dots = document.querySelectorAll(".dot");
             const nextBtn = document.querySelector("#next");
             const prevBtn = document.querySelector("#prev");
+            const header = document.querySelector("header");
+            header.style.position = "relative";
+
             let currentSlide = 0;
             function updateSlide(){
                 track.style.transform =
@@ -1615,36 +1591,86 @@
             // For NAVBAR
 
             const menuItems = document.querySelectorAll(".opt li");
-            const dropdown = document.querySlector(".content");
-            const heading = document.querySelector(".conctent h1");
-
-            // menu options
+            const dropdown = document.querySelector(".content");
+            const heading = document.querySelector(".content h1");
             const menuData = {
-                "Store":[
+                Store:[
                     "Phones",
-                    "Tablets", 
-                    "Audio", 
+                    "Tablets",
+                    "Audio",
                     "Accessories"
                 ],
-
-                "Tablet": [
-                    "OnePlus Pad", 
+                Phone:[
+                    "OnePlus 15",
+                    "OnePlus 15R",
+                    "Nord Series"
+                ],
+                Tablet:[
+                    "OnePlus Pad",
                     "OnePlus Pad 2",
                     "OnePlus Pad Go"
-                ], 
-
-                "More Products": [
-                    "Watch", 
-                    "Keyword", 
+                ],
+                Audio:[
+                    "Buds",
+                    "Headphones"
+                ],
+                "More Products":[
+                    "Watch",
+                    "Keyboard",
                     "Charger",
                     "Cases"
-                ], 
-
-                "OneTopia": [
-
+                ],
+                OneTopia:[
+                    "Community",
+                    "Events",
+                    "Rewards"
+                ],
+                Community:[
+                    "Forums",
+                    "Events"
+                ],
+                Support:[
+                    "Service Center",
+                    "Services",
+                    "Contact Us"
                 ]
-            }
+            };
+            
+            // initial hidden state
 
+            dropdown.style.position="absolute";
+            dropdown.style.top="50px";
+            dropdown.style.left="0";
+            dropdown.style.width="100%";
+            dropdown.style.height="300px";
+            dropdown.style.background="white";
+            dropdown.style.transform="translateY(-100%)";
+            dropdown.style.transition="0.5s ease";
+            dropdown.style.zIndex="10";
+
+            
+            menuItems.forEach(item=>{
+                item.addEventListener("mouseenter",()=>{
+                    let name=item.innerText.trim();
+                    heading.innerHTML="";
+                    let ul=document.createElement("ul");
+                    ul.style.display="flex";
+                    ul.style.gap="40px";
+                    ul.style.padding="40px";
+                    menuData[name].forEach(product=>{
+                        let li=document.createElement("li");
+                        li.innerText=product;
+                        li.style.listStyle="none";
+                        li.style.fontSize="20px";
+                        ul.appendChild(li);
+                    });
+                    heading.appendChild(ul);
+                    dropdown.style.transform="translateY(0)";
+                });
+            });
+            dropdown.addEventListener("mouseleave",()=>{
+                dropdown.style.transform="translateY(-100%)";
+            });
         </script>
 </body>
 </html>
